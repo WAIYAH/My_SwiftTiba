@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Health Tips - SwiftTiba</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/blog.css">
+
+</head>
+<body>
+    <!-- Emergency Hotline -->
+    <div class="emergency-hotline text-center py-2">
+        <span>Emergency Hotline: <a href="tel:+1234567890">+123-456-7890</a></span>
+    </div>
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SwiftTiba</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hospital.html">Nearby Hospitals</a></li>
+                    <li class="nav-item"><a class="nav-link" href="first-aid.html">First Aid Guide</a></li>
+                    <li class="nav-item"><a class="nav-link" href="chatbot.html">Health Chatbot</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog & Tips</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                </ul>
+                <!-- Dark Mode Toggle -->
+                <div class="dark-mode-toggle ms-3">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog & Health Tips Section -->
+    <section id="blog" class="blog-section py-5">
+        <div class="container">
+            <!-- Hero Banner for Blog & Health Tips -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 text-center text-md-start">
+                    <h1>Blog & <span>Health Tips</span></h1>
+                    <p class="lead">Stay Informed with the Latest Health News and Wellness Tips</p>
+                    <p>Explore our articles on health trends, wellness advice, and practical tips to keep you and your loved ones healthy and informed.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="blog-image glassmorphism">
+                        <img src="https://via.placeholder.com/500" alt="Health Tips Illustration" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Articles -->
+            <h2 class="text-center mb-5">Featured Articles</h2>
+            <div class="row">
+                <!-- Article 1 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="blog-card glassmorphism">
+                        <img src="https://via.placeholder.com/300" alt="Blog Image" class="img-fluid rounded-top">
+                        <div class="p-4">
+                            <h4>5 Ways to Boost Your Immune System</h4>
+                            <p class="text-muted">March 15, 2025</p>
+                            <p>Discover simple habits to strengthen your immune system, including diet tips, exercise, and stress management techniques.</p>
+                            <a href="#comments-1" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                        <!-- Comment Section -->
+                        <div class="comment-section p-4 border-top" id="comments-1">
+                            <h5>Comments</h5>
+                            <div class="comments-list mb-3">
+                                <p><strong>Jane D.</strong>: Great tips! I started adding more vitamin C to my diet.</p>
+                            </div>
+                            <form class="comment-form">
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="2" placeholder="Add a comment..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Post Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Article 2 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="blog-card glassmorphism">
+                        <img src="https://via.placeholder.com/300" alt="Blog Image" class="img-fluid rounded-top">
+                        <div class="p-4">
+                            <h4>Understanding Stress: Causes and Solutions</h4>
+                            <p class="text-muted">March 10, 2025</p>
+                            <p>Learn about the common causes of stress and effective strategies to manage it for better mental health.</p>
+                            <a href="#comments-2" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                        <!-- Comment Section -->
+                        <div class="comment-section p-4 border-top" id="comments-2">
+                            <h5>Comments</h5>
+                            <div class="comments-list mb-3">
+                                <p><strong>Mark S.</strong>: Meditation really helped me manage my stress levels!</p>
+                            </div>
+                            <form class="comment-form">
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="2" placeholder="Add a comment..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Post Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Article 3 -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="blog-card glassmorphism">
+                        <img src="https://via.placeholder.com/300" alt="Blog Image" class="img-fluid rounded-top">
+                        <div class="p-4">
+                            <h4>The Benefits of Regular Exercise</h4>
+                            <p class="text-muted">March 5, 2025</p>
+                            <p>Explore how regular physical activity can improve your physical and mental well-being.</p>
+                            <a href="#comments-3" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                        <!-- Comment Section -->
+                        <div class="comment-section p-4 border-top" id="comments-3">
+                            <h5>Comments</h5>
+                            <div class="comments-list mb-3">
+                                <p><strong>Emily R.</strong>: I feel so much better after starting a daily workout routine!</p>
+                            </div>
+                            <form class="comment-form">
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="2" placeholder="Add a comment..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Post Comment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wellness Tips -->
+            <h2 class="text-center mb-5">Wellness Tips</h2>
+            <div class="row">
+                <!-- Tip 1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="tip-card glassmorphism p-4">
+                        <h4>Stay Hydrated</h4>
+                        <p>Drink at least 8 glasses of water daily to keep your body hydrated and support overall health.</p>
+                    </div>
+                </div>
+                <!-- Tip 2 -->
+                <div class="col-md-6 mb-4">
+                    <div class="tip-card glassmorphism p-4">
+                        <h4>Get Enough Sleep</h4>
+                        <p>Aim for 7-9 hours of sleep per night to allow your body to recover and recharge.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center my-5">
+                <h3>Need Health Advice?</h3>
+                <p>Use our AI Chatbot for quick medical guidance or explore our First Aid Guides.</p>
+                <a href="chatbot.html" class="btn btn-primary me-2">Chat Now</a>
+                <a href="first-aid.html" class="btn btn-outline-primary">First Aid Guides</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <!-- Section 1: Tagline & Brief Description -->
+            <div class="row mb-4">
+                <div class="col-md-4 text-center text-md-start">
+                    <h3 class="footer-tagline">SwiftTiba – Your AI-Powered Healthcare Companion</h3>
+                    <p class="footer-description">Providing instant AI-driven health guidance, first aid tips, and nearby hospital recommendations.</p>
+                </div>
+                <!-- Section 2: Quick Links -->
+                <div class="col-md-4 text-center">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="index.html#hospitals" class="footer-link">Nearby Hospitals</a></li>
+                        <li><a href="first-aid.html" class="footer-link">First Aid Guide</a></li>
+                        <li><a href="chatbot.html" class="footer-link">Health Chatbot</a></li>
+                        <li><a href="blog.html" class="footer-link">Blog & Health Tips</a></li>
+                    </ul>
+                </div>
+                <!-- Section 5: Social Media Links -->
+                <div class="col-md-4 text-center text-md-end">
+                    <h5 class="footer-heading">Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Section 7: Copyright & Legal Links -->
+            <div class="row pt-3 border-top">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="footer-copyright">© 2025 SwiftTiba. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="footer-legal-link">Privacy Policy</a> | 
+                    <a href="#" class="footer-legal-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll-to-Top Button -->
+        <button id="scrollToTopBtn" class="scroll-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="scripts.js"></script>
+    <!-- Blog-specific JS -->
+    <script src="js/blog.js"></script>
+</body>
+</html>

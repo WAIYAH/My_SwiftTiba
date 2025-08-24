@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Chatbot - SwiftTiba</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Main CSS (for header, footer, etc.) -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Chatbot-specific CSS -->
+    <link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+    <!-- Emergency Hotline -->
+    <div class="emergency-hotline text-center py-2">
+        <span>Emergency Hotline: <a href="tel:+1234567890">+123-456-7890</a></span>
+    </div>
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SwiftTiba</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hospital.html">Nearby Hospitals</a></li>
+                    <li class="nav-item"><a class="nav-link" href="first-aid.html">First Aid Guide</a></li>
+                    <li class="nav-item"><a class="nav-link" href="chatbot.html">Health Chatbot</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog & Tips</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                </ul>
+                <!-- Dark Mode Toggle -->
+                <div class="dark-mode-toggle ms-3">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Health Chatbot Section -->
+    <section id="chatbot" class="chatbot-section py-5">
+        <div class="container">
+            <!-- Hero Banner for Chatbot -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 text-center text-md-start">
+                    <h1>Health <span>Chatbot</span></h1>
+                    <p class="lead">Get Instant AI-Driven Medical Advice</p>
+                    <p>Our AI-powered chatbot provides quick symptom checking, emergency guidance, and recommendations to help you take the right steps during a medical situation.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="chatbot-image glassmorphism">
+                        <img src="img/hospitals.jpeg" alt="Chatbot Illustration" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chatbot Interface -->
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="chatbot-container glassmorphism p-4">
+                        <div id="chatbot-messages" class="mb-3"></div>
+                        <div class="input-group">
+                            <input type="text" id="chatbot-input" class="form-control" placeholder="Type your symptoms or ask a question...">
+                            <button onclick="sendMessage()" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center my-5">
+                <h3>Need More Help?</h3>
+                <p>Explore our First Aid Guides or find a nearby hospital for immediate assistance.</p>
+                <a href="first-aid.html" class="btn btn-primary me-2">First Aid Guides</a>
+                <a href="hospital.html" class="btn btn-outline-primary">Find Hospitals</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <!-- Section 1: Tagline & Brief Description -->
+            <div class="row mb-4">
+                <div class="col-md-4 text-center text-md-start">
+                    <h3 class="footer-tagline">SwiftTiba – Your AI-Powered Healthcare Companion</h3>
+                    <p class="footer-description">Providing instant AI-driven health guidance, first aid tips, and nearby hospital recommendations.</p>
+                </div>
+                <!-- Section 2: Quick Links -->
+                <div class="col-md-4 text-center">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="hospital.html" class="footer-link">Nearby Hospitals</a></li>
+                        <li><a href="first-aid.html" class="footer-link">First Aid Guide</a></li>
+                        <li><a href="chatbot.html" class="footer-link">Health Chatbot</a></li>
+                        <li><a href="blog.html" class="footer-link">Blog & Health Tips</a></li>
+                    </ul>
+                </div>
+                <!-- Section 5: Social Media Links -->
+                <div class="col-md-4 text-center text-md-end">
+                    <h5 class="footer-heading">Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Section 7: Copyright & Legal Links -->
+            <div class="row pt-3 border-top">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="footer-copyright">© 2025 SwiftTiba. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="footer-legal-link">Privacy Policy</a> | 
+                    <a href="#" class="footer-legal-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll-to-Top Button -->
+        <button id="scrollToTopBtn" class="scroll-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main JS (for header, footer, etc.) -->
+    <script src="scripts.js"></script>
+    <!-- Chatbot-specific JS -->
+    <script src="js/chatbot.js"></script>
+</body>
+</html>

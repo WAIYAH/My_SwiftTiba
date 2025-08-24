@@ -1,0 +1,185 @@
+/* Blog & Health Tips Section */
+.blog-section {
+    background-color: #f4f4f9;
+    padding: 60px 0;
+}
+
+body.dark-mode .blog-section {
+    background-color: #1a1a1a;
+}
+
+.blog-section h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #6A1B9A;
+}
+
+body.dark-mode .blog-section h1 {
+    color: #BB86FC;
+}
+
+.blog-section h1 span {
+    color: #BB86FC;
+}
+
+.blog-section .lead {
+    font-size: 1.25rem;
+    color: #333;
+}
+
+body.dark-mode .blog-section .lead {
+    color: #ccc;
+}
+
+.blog-image {
+    padding: 15px;
+}
+
+.blog-image img {
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Blog Cards */
+.blog-card {
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+}
+
+.blog-card img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+}
+
+.blog-card h4 {
+    font-size: 1.5rem;
+    color: #6A1B9A;
+    margin-bottom: 0.5rem;
+}
+
+body.dark-mode .blog-card h4 {
+    color: #BB86FC;
+}
+
+.blog-card p {
+    color: #666;
+}
+
+body.dark-mode .blog-card p {
+    color: #ccc;
+}
+
+.blog-card .text-muted {
+    font-size: 0.9rem;
+    color: #999 !important;
+}
+
+body.dark-mode .blog-card .text-muted {
+    color: #888 !important;
+}
+
+/* Comment Section */
+.comment-section {
+    display: none;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0 0 15px 15px;
+}
+
+body.dark-mode .comment-section {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.comment-section h5 {
+    font-size: 1.2rem;
+    color: #6A1B9A;
+}
+
+body.dark-mode .comment-section h5 {
+    color: #BB86FC;
+}
+
+.comments-list p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+body.dark-mode .comments-list p {
+    color: #ccc;
+}
+
+.comment-section textarea {
+    resize: none;
+}
+
+/* Wellness Tips */
+.tip-card {
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-10px);
+}
+
+.tip-card h4 {
+    font-size: 1.5rem;
+    color: #6A1B9A;
+    margin-bottom: 1rem;
+}
+
+body.dark-mode .tip-card h4 {
+    color: #BB86FC;
+}
+
+.tip-card p {
+    color: #666;
+}
+
+body.dark-mode .tip-card p {
+    color: #ccc;
+}
+
+/* Call to Action */
+.blog-section .btn-primary {
+    background-color: #BB86FC;
+    border-color: #BB86FC;
+    transition: all 0.3s ease;
+}
+
+.blog-section .btn-primary:hover {
+    background-color: #9c60d8;
+    border-color: #9c60d8;
+}
+
+.blog-section .btn-outline-primary {
+    color: #BB86FC;
+    border-color: #BB86FC;
+    transition: all 0.3s ease;
+}
+
+.blog-section .btn-outline-primary:hover {
+    background-color: #BB86FC;
+    color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .blog-section h1 {
+        font-size: 2rem;
+    }
+
+    .blog-section .lead {
+        font-size: 1rem;
+    }
+
+    .blog-image {
+        margin-bottom: 2rem;
+    }
+
+    .blog-card h4,
+    .tip-card h4 {
+        font-size: 1.25rem;
+    }
+}
