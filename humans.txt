@@ -1,0 +1,14 @@
+/* TEAM */
+
+Creator: SwiftTiba Team
+Contact: support@swifttiba.com
+Location: Nairobi, Kenya
+
+/* SITE */
+
+Last update: 2025/02/11
+Language: English
+Doctype: HTML5
+Standards: CSS3, ES6+
+Components: Leaflet.js, Font Awesome, Google Fonts
+IDE: Visual Studio Code

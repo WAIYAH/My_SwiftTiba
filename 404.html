@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Health Chat — SwiftTiba</title>
-  <meta name="description" content="Get instant AI-powered health guidance and symptom assessment with SwiftTiba's health chatbot.">
+  <title>Page Not Found — SwiftTiba</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Return to SwiftTiba's emergency care platform.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚑</text></svg>">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#6A1B9A">
@@ -25,7 +25,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="first-aid.html">First Aid</a></li>
         <li><a href="hospital.html">Hospitals</a></li>
-        <li><a href="chatbot.html" class="active">AI Chat</a></li>
+        <li><a href="chatbot.html">AI Chat</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -50,71 +50,25 @@
     <a href="tel:999" class="mobile-emergency" data-emergency-call><i class="fas fa-phone-alt"></i> Call 999 Now</a>
   </div>
 
-  <!-- Hero -->
-  <section class="hero" style="padding: 3rem 0 4rem;">
-    <div class="container">
-      <span class="badge badge-primary" style="margin-bottom: 1rem; background: rgba(255,255,255,0.15); color: #fff;"><i class="fas fa-circle" style="font-size: 6px;"></i> AI-Powered Health Guidance</span>
-      <h1>Health Chatbot</h1>
-      <p>Get instant health guidance and symptom assessment. Our AI assistant can help you understand symptoms and recommend next steps.</p>
-    </div>
-  </section>
+  <!-- 404 Content -->
+  <section style="min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 1.5rem;">
+    <div>
+      <div style="font-size: 8rem; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 1rem; opacity: 0.15;">404</div>
+      <h1 style="font-size: 2rem; margin-bottom: 0.75rem;">Page Not Found</h1>
+      <p style="color: var(--gray-600); max-width: 480px; margin: 0 auto 2rem; line-height: 1.6;">
+        The page you're looking for doesn't exist or has been moved. But don't worry — help is always available.
+      </p>
 
-  <!-- Chat Section -->
-  <section class="section">
-    <div class="container">
-      <!-- Disclaimer -->
-      <div class="disclaimer-bar" data-animate>
-        <i class="fas fa-exclamation-triangle"></i>
-        <div>
-          <strong>Important:</strong> This AI chatbot provides general health information only. It is <strong>not</strong> a substitute for professional medical advice, diagnosis, or treatment. For medical emergencies, call <a href="tel:999">999</a> immediately.
-        </div>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem;">
+        <a href="index.html" class="btn btn-primary btn-lg"><i class="fas fa-home"></i> Go Home</a>
+        <a href="tel:999" class="btn btn-emergency btn-lg" data-emergency-call><i class="fas fa-phone-alt"></i> Call 999</a>
       </div>
 
-      <!-- Chat Interface -->
-      <div class="chat-container" data-animate>
-        <div class="chat-header-bar">
-          <div class="avatar"><i class="fas fa-robot"></i></div>
-          <div>
-            <h3>SwiftTiba Health Assistant</h3>
-            <div class="status"><span style="display:inline-block;width:8px;height:8px;background:#4CAF50;border-radius:50;margin-right:4px;border-radius:50%;"></span> Online — Ready to help</div>
-          </div>
-        </div>
-
-        <div class="chat-messages" id="chatMessages">
-          <!-- Messages populated by JS -->
-        </div>
-
-        <div class="quick-replies" id="quickReplies">
-          <button class="quick-reply-btn" data-message="I have chest pain">Chest Pain</button>
-          <button class="quick-reply-btn" data-message="I have a fever">Fever</button>
-          <button class="quick-reply-btn" data-message="Someone is bleeding">Bleeding</button>
-          <button class="quick-reply-btn" data-message="Find nearest hospital">Find Hospital</button>
-          <button class="quick-reply-btn" data-message="How to do CPR">CPR Guide</button>
-        </div>
-
-        <div class="chat-input-area">
-          <input type="text" id="chatInput" placeholder="Describe your symptoms or ask a health question..." autocomplete="off">
-          <button class="send-btn" id="sendBtn" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
-        </div>
-      </div>
-
-      <!-- Help Cards -->
-      <div class="grid grid-3" style="margin-top: 3rem;">
-        <a href="first-aid.html" class="emergency-card" data-animate data-delay="100">
-          <div class="card-icon icon-red"><i class="fas fa-first-aid"></i></div>
-          <h3>First Aid Guide</h3>
-          <p>Step-by-step emergency instructions for common situations</p>
-        </a>
-        <a href="hospital.html" class="emergency-card" data-animate data-delay="200">
-          <div class="card-icon icon-teal"><i class="fas fa-hospital"></i></div>
-          <h3>Find Hospitals</h3>
-          <p>Locate the nearest hospital in Nairobi with contact details</p>
-        </a>
-        <a href="tel:999" class="emergency-card" data-animate data-delay="300" data-emergency-call>
-          <div class="card-icon icon-red"><i class="fas fa-phone-alt"></i></div>
-          <h3>Call Emergency</h3>
-          <p>For life-threatening emergencies, call 999 immediately</p>
-        </a>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="first-aid.html" class="btn btn-outline btn-sm"><i class="fas fa-first-aid"></i> First Aid</a>
+        <a href="hospital.html" class="btn btn-outline btn-sm"><i class="fas fa-hospital"></i> Hospitals</a>
+        <a href="chatbot.html" class="btn btn-outline btn-sm"><i class="fas fa-robot"></i> AI Chat</a>
+        <a href="contact.html" class="btn btn-outline btn-sm"><i class="fas fa-envelope"></i> Contact</a>
       </div>
     </div>
   </section>
@@ -173,18 +127,6 @@
   </footer>
 
   <button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
-
-  <div class="cookie-banner" role="dialog">
-    <div class="container">
-      <p><i class="fas fa-cookie-bite"></i> We use essential cookies to ensure SwiftTiba works properly. <a href="cookie-policy.html">Learn more</a></p>
-      <div class="cookie-actions">
-        <button class="btn btn-sm btn-primary cookie-accept">Accept All</button>
-        <button class="btn btn-sm btn-ghost cookie-decline" style="color:rgba(255,255,255,0.7);">Essential Only</button>
-      </div>
-    </div>
-  </div>
-
   <script src="js/main.js"></script>
-  <script src="js/chatbot.js"></script>
 </body>
 </html>

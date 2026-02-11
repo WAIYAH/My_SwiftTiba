@@ -66,4 +66,93 @@ SwiftTiba/
 ### Run Locally
 1. Clone the repo:
    ```bash
-   git clone https://github.com/your-username/swifttiba.git
+   git clone https://github.com/WAIYAH/My_SwiftTiba.git
+   ```
+2. Open in your browser:
+   ```bash
+   cd My_SwiftTiba
+   start index.html
+   ```
+   Or use VS Code's **Live Server** extension for auto-reload during development.
+
+---
+
+## 🎨 Design System
+
+SwiftTiba uses a custom **"Calm in Crisis"** design system — no CSS frameworks, just purposeful design tokens:
+
+| Token | Value | Purpose |
+|---|---|---|
+| `--primary` | `#6A1B9A` | Brand purple — trust, authority |
+| `--emergency-red` | `#E53935` | Critical alerts, emergency UI |
+| `--teal` | `#00ACC1` | Teal accent — calm, medical |
+| `--amber` | `#FFB74D` | Warnings, highlights |
+| `--success` | `#43A047` | Confirmations, positive states |
+
+**Typography:** Inter (headings/UI) + Open Sans (body text)
+
+---
+
+## 📄 Pages Overview
+
+| Page | Description |
+|---|---|
+| **Home** | Emergency command center with quick access grid, common emergencies, FAQ |
+| **First Aid** | 5 detailed guides: CPR, Choking, Severe Bleeding, Burns, Fractures |
+| **Hospital Locator** | Interactive Leaflet.js map with 10 Nairobi hospitals + filters |
+| **AI Chatbot** | Symptom checker supporting chest pain, fever, bleeding, CPR, burns + more |
+| **Blog** | 6 health articles with category filters and expandable content |
+| **About** | Mission, vision, story, impact stats, core values, partners |
+| **Contact** | Validated contact form + email, WhatsApp, emergency info |
+| **Legal (×4)** | Privacy Policy, Terms of Service, Cookie Policy, Medical Disclaimer |
+
+---
+
+## 🤝 Partners
+- SHA (Social Health Authority)
+- Ministry of Health Kenya
+- Kenyatta National Hospital
+- Amref Health Africa
+- USAID Kenya
+- UNICEF Kenya
+
+---
+
+## 📞 Emergency Contacts
+| Service | Number |
+|---|---|
+| Kenya Police | **999** |
+| Ambulance / Fire | **112** |
+| Kenya Red Cross | **1199** |
+
+---
+
+## 👥 Contributing
+
+Contributions are welcome! If you'd like to help improve SwiftTiba:
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit changes: `git commit -m "Add your feature"`
+4. Push to branch: `git push origin feature/your-feature`
+5. Open a Pull Request
+
+---
+
+## 📬 Contact
+
+- **Email:** [support@swifttiba.com](mailto:support@swifttiba.com)
+- **WhatsApp:** [+254 715 674 828](https://wa.me/254715674828)
+- **Location:** Nairobi, Kenya
+
+---
+
+## 📜 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+<p align="center">
+  <strong>SwiftTiba</strong> — Because every second counts. 🚑
+</p>
