@@ -1,44 +1,92 @@
-// Dark Mode Toggle
-const darkModeToggle = document.querySelector('.dark-mode-toggle');
-darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-});
+/**
+ * SwiftTiba — Contact Form Validation & Submission
+ */
 
-// Scroll-to-Top Button Functionality
-const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+(function() {
+  'use strict';
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollToTopBtn.classList.add('visible');
-    } else {
-        scrollToTopBtn.classList.remove('visible');
+  const form = document.getElementById('contactForm');
+  const successDiv = document.getElementById('formSuccess');
+  if (!form) return;
+
+  const fields = {
+    name: {
+      el: document.getElementById('contactName'),
+      error: document.getElementById('nameError'),
+      validate: (v) => v.trim().length >= 2 ? '' : 'Please enter your full name (at least 2 characters).'
+    },
+    email: {
+      el: document.getElementById('contactEmail'),
+      error: document.getElementById('emailError'),
+      validate: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Please enter a valid email address.'
+    },
+    subject: {
+      el: document.getElementById('contactSubject'),
+      error: document.getElementById('subjectError'),
+      validate: (v) => v ? '' : 'Please select a subject.'
+    },
+    message: {
+      el: document.getElementById('contactMessage'),
+      error: document.getElementById('messageError'),
+      validate: (v) => v.trim().length >= 10 ? '' : 'Please write a message (at least 10 characters).'
     }
-});
+  };
 
-scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+  // Real-time validation
+  Object.values(fields).forEach(field => {
+    field.el.addEventListener('blur', () => validateField(field));
+    field.el.addEventListener('input', () => {
+      if (field.el.classList.contains('invalid')) {
+        validateField(field);
+      }
     });
-});
+  });
 
-// Google Maps Initialization
-function initMap() {
-    const swiftTibaLocation = { lat: 37.7749, lng: -122.4194 }; // Example coordinates (San Francisco)
-    const map = new google.maps.Map(document.getElementById('map'), {
-        center: swiftTibaLocation,
-        zoom: 12,
-    });
-    new google.maps.Marker({
-        position: swiftTibaLocation,
-        map: map,
-        title: 'SwiftTiba Office',
-    });
-}
+  function validateField(field) {
+    const msg = field.validate(field.el.value);
+    if (msg) {
+      field.el.classList.add('invalid');
+      field.el.classList.remove('valid');
+      field.error.textContent = msg;
+      field.error.style.display = 'block';
+      return false;
+    } else {
+      field.el.classList.remove('invalid');
+      field.el.classList.add('valid');
+      field.error.textContent = '';
+      field.error.style.display = 'none';
+      return true;
+    }
+  }
 
-// Form Submission (Basic Client-Side Alert)
-document.getElementById('contactForm').addEventListener('submit', (e) => {
+  function validateAll() {
+    let valid = true;
+    Object.values(fields).forEach(field => {
+      if (!validateField(field)) valid = false;
+    });
+    return valid;
+  }
+
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
-    alert('Thank you for your message! We will get back to you soon.');
-    document.getElementById('contactForm').reset();
-});
+    if (!validateAll()) {
+      // Scroll to first error
+      const first = form.querySelector('.invalid');
+      if (first) first.focus();
+      return;
+    }
+
+    // Simulate form submission
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+
+    setTimeout(() => {
+      form.style.display = 'none';
+      successDiv.style.display = 'block';
+      successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 1500);
+  });
+
+})();

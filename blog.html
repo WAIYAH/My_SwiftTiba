@@ -1,231 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog & Health Tips - SwiftTiba</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/blog.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Blog — SwiftTiba</title>
+  <meta name="description" content="Stay informed with the latest health tips, wellness advice, and medical insights from SwiftTiba.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚑</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Emergency Hotline -->
-    <div class="emergency-hotline text-center py-2">
-        <span>Emergency Hotline: <a href="tel:+1234567890">+123-456-7890</a></span>
+
+  <div class="emergency-bar">
+    <span class="pulse-dot"></span>
+    Emergency? Call <a href="tel:999" data-emergency-call>999</a> or <a href="tel:112" data-emergency-call>112</a> immediately
+  </div>
+
+  <nav class="navbar" role="navigation">
+    <div class="container">
+      <a href="index.html" class="nav-brand"><i class="fas fa-heartbeat"></i> SwiftTiba</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="first-aid.html">First Aid</a></li>
+        <li><a href="hospital.html">Hospitals</a></li>
+        <li><a href="chatbot.html">AI Chat</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tel:999" class="nav-emergency-btn" data-emergency-call><i class="fas fa-phone-alt"></i> Call 999</a>
+        <button class="dark-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
     </div>
+  </nav>
 
-    <!-- Sticky Navigation Bar -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">SwiftTiba</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="hospital.html">Nearby Hospitals</a></li>
-                    <li class="nav-item"><a class="nav-link" href="first-aid.html">First Aid Guide</a></li>
-                    <li class="nav-item"><a class="nav-link" href="chatbot.html">Health Chatbot</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog & Tips</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                </ul>
-                <!-- Dark Mode Toggle -->
-                <div class="dark-mode-toggle ms-3">
-                    <i class="fas fa-moon"></i>
-                </div>
+  <div class="mobile-menu" role="dialog">
+    <button class="mobile-close" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="first-aid.html">First Aid</a>
+    <a href="hospital.html">Hospitals</a>
+    <a href="chatbot.html">AI Chat</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:999" class="mobile-emergency" data-emergency-call><i class="fas fa-phone-alt"></i> Call 999 Now</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" style="padding: 3rem 0 4rem;">
+    <div class="container">
+      <span class="badge badge-primary" style="margin-bottom: 1rem; background: rgba(255,255,255,0.15); color: #fff;"><i class="fas fa-newspaper"></i> Health Insights</span>
+      <h1>Health Blog</h1>
+      <p>Expert health tips, wellness advice, and medical insights to help you live your healthiest life.</p>
+    </div>
+  </section>
+
+  <!-- Filter Tabs -->
+  <section class="section" style="padding-top: 2rem; padding-bottom: 0;">
+    <div class="container">
+      <div class="filter-tabs" data-animate>
+        <button class="filter-tab active" data-filter="all">All Posts</button>
+        <button class="filter-tab" data-filter="health">Health Tips</button>
+        <button class="filter-tab" data-filter="wellness">Wellness</button>
+        <button class="filter-tab" data-filter="nutrition">Nutrition</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Articles -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-3" id="blogGrid">
+
+        <!-- Article 1: Immune System -->
+        <article class="blog-card" data-category="health" data-animate>
+          <div class="blog-image" style="background: linear-gradient(135deg, var(--primary), var(--teal)); padding: 2rem; color: #fff; display: flex; align-items: center; justify-content: center; min-height: 200px;">
+            <i class="fas fa-shield-virus" style="font-size: 4rem; opacity: 0.8;"></i>
+          </div>
+          <div class="blog-content">
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <span class="badge badge-primary">Health Tips</span>
+              <span class="badge badge-info">5 min read</span>
             </div>
+            <h3>How to Boost Your Immune System Naturally</h3>
+            <p>Your immune system is your body's defense line. Here are science-backed ways to keep it strong and resilient throughout the year.</p>
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> December 10, 2024</span>
+              <span><i class="far fa-user"></i> Dr. Amani Mwangi</span>
+            </div>
+            <div class="blog-full" id="article1" style="display: none;">
+              <hr style="margin: 1.5rem 0; border-color: var(--gray-200);">
+              <h4>1. Eat a Balanced Diet</h4>
+              <p>Focus on fruits, vegetables, lean proteins, and whole grains. Foods rich in vitamin C (citrus fruits, bell peppers), vitamin D (fortified foods, sunlight exposure), and zinc (nuts, seeds) are particularly beneficial for immune function.</p>
+              
+              <h4>2. Get Regular Exercise</h4>
+              <p>Moderate exercise — such as brisk walking, cycling, or swimming for 30 minutes daily — can boost your immune response. Avoid over-exercising, which can actually suppress immune function.</p>
+              
+              <h4>3. Prioritize Quality Sleep</h4>
+              <p>Aim for 7-9 hours of sleep per night. During sleep, your body produces cytokines — proteins that help fight infection and inflammation. Chronic sleep deprivation can significantly weaken your immune defenses.</p>
+              
+              <h4>4. Manage Stress Effectively</h4>
+              <p>Chronic stress releases cortisol, which suppresses immune function. Practice stress-management techniques: meditation, deep breathing, yoga, or spending time in nature.</p>
+              
+              <h4>5. Stay Hydrated</h4>
+              <p>Water is essential for every bodily function, including immune response. Aim for at least 8 glasses of water daily. Herbal teas and water-rich fruits also contribute to hydration.</p>
+              
+              <h4>6. Supplement Wisely</h4>
+              <p>Consider supplements like Vitamin C (500-1000mg), Vitamin D3 (1000-2000 IU), and Zinc (15-25mg) daily, especially if your diet is lacking. Always consult a healthcare provider before starting supplements.</p>
+            </div>
+            <button class="btn btn-sm btn-outline blog-toggle" data-target="article1" style="margin-top: 1rem;">Read Full Article <i class="fas fa-chevron-down"></i></button>
+          </div>
+        </article>
+
+        <!-- Article 2: Stress Management -->
+        <article class="blog-card" data-category="wellness" data-animate data-delay="100">
+          <div class="blog-image" style="background: linear-gradient(135deg, var(--teal), #26C6DA); padding: 2rem; color: #fff; display: flex; align-items: center; justify-content: center; min-height: 200px;">
+            <i class="fas fa-brain" style="font-size: 4rem; opacity: 0.8;"></i>
+          </div>
+          <div class="blog-content">
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <span class="badge badge-info">Wellness</span>
+              <span class="badge badge-primary">7 min read</span>
+            </div>
+            <h3>Managing Stress for Better Health</h3>
+            <p>Chronic stress silently damages your health. Learn proven strategies to manage stress and protect your mind and body.</p>
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> November 25, 2024</span>
+              <span><i class="far fa-user"></i> Sarah Ochieng</span>
+            </div>
+            <div class="blog-full" id="article2" style="display: none;">
+              <hr style="margin: 1.5rem 0; border-color: var(--gray-200);">
+              <h4>Understanding Stress</h4>
+              <p>Stress is your body's response to demands or threats. While short-term stress can be beneficial, chronic stress leads to serious health problems: cardiovascular disease, weakened immunity, digestive issues, and mental health disorders.</p>
+              
+              <h4>The 5-4-3-2-1 Grounding Technique</h4>
+              <p>When stress feels overwhelming, use this sensory grounding technique: identify 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, and 1 you can taste. This brings you back to the present moment.</p>
+              
+              <h4>Build a Stress-Management Toolkit</h4>
+              <ul>
+                <li><strong>Deep Breathing:</strong> Practice 4-7-8 breathing — inhale for 4 seconds, hold for 7, exhale for 8</li>
+                <li><strong>Physical Activity:</strong> Even a 10-minute walk can reduce stress hormones</li>
+                <li><strong>Social Connection:</strong> Talk to friends, family, or a counselor</li>
+                <li><strong>Mindfulness:</strong> Spend 10 minutes daily in meditation or quiet reflection</li>
+                <li><strong>Nature:</strong> Spend time outdoors — studies show it reduces cortisol levels</li>
+              </ul>
+              
+              <h4>When to Seek Help</h4>
+              <p>If stress is interfering with your daily life, relationships, or work for more than two weeks, consider speaking with a mental health professional. There is no shame in seeking help.</p>
+            </div>
+            <button class="btn btn-sm btn-outline blog-toggle" data-target="article2" style="margin-top: 1rem;">Read Full Article <i class="fas fa-chevron-down"></i></button>
+          </div>
+        </article>
+
+        <!-- Article 3: Exercise -->
+        <article class="blog-card" data-category="health" data-animate data-delay="200">
+          <div class="blog-image" style="background: linear-gradient(135deg, #E53935, #FF7043); padding: 2rem; color: #fff; display: flex; align-items: center; justify-content: center; min-height: 200px;">
+            <i class="fas fa-running" style="font-size: 4rem; opacity: 0.8;"></i>
+          </div>
+          <div class="blog-content">
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <span class="badge badge-primary">Health Tips</span>
+              <span class="badge badge-info">4 min read</span>
+            </div>
+            <h3>The Importance of Regular Exercise</h3>
+            <p>Regular physical activity is one of the most important things you can do for your health. Discover how to start and stay consistent.</p>
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> November 10, 2024</span>
+              <span><i class="far fa-user"></i> James Kipchoge</span>
+            </div>
+            <div class="blog-full" id="article3" style="display: none;">
+              <hr style="margin: 1.5rem 0; border-color: var(--gray-200);">
+              <h4>Benefits of Regular Exercise</h4>
+              <ul>
+                <li>Reduces risk of heart disease, stroke, and type 2 diabetes</li>
+                <li>Strengthens bones and muscles</li>
+                <li>Improves mental health and reduces anxiety/depression</li>
+                <li>Helps maintain a healthy weight</li>
+                <li>Boosts energy levels and improves sleep</li>
+                <li>Enhances brain function and memory</li>
+              </ul>
+              
+              <h4>How Much Exercise Do You Need?</h4>
+              <p>The WHO recommends adults get at least <strong>150 minutes of moderate-intensity</strong> or <strong>75 minutes of vigorous-intensity</strong> aerobic activity per week, plus muscle-strengthening activities on 2 or more days per week.</p>
+              
+              <h4>Getting Started</h4>
+              <p>Start small and build gradually. A 10-minute walk today can become a 30-minute jog in a few weeks. Choose activities you enjoy — dance, swim, cycle, garden — anything that gets you moving. Consistency matters more than intensity.</p>
+              
+              <h4>Exercise Safely</h4>
+              <p>Always warm up before and cool down after exercise. Stay hydrated, listen to your body, and consult a healthcare provider before starting a new exercise program if you have existing health conditions.</p>
+            </div>
+            <button class="btn btn-sm btn-outline blog-toggle" data-target="article3" style="margin-top: 1rem;">Read Full Article <i class="fas fa-chevron-down"></i></button>
+          </div>
+        </article>
+
+        <!-- Wellness Tip 1: Hydration -->
+        <article class="blog-card" data-category="nutrition" data-animate>
+          <div class="blog-image" style="background: linear-gradient(135deg, #0288D1, #03A9F4); padding: 2rem; color: #fff; display: flex; align-items: center; justify-content: center; min-height: 200px;">
+            <i class="fas fa-tint" style="font-size: 4rem; opacity: 0.8;"></i>
+          </div>
+          <div class="blog-content">
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <span class="badge badge-info">Nutrition</span>
+              <span class="badge badge-success">Quick Tip</span>
+            </div>
+            <h3>The Power of Proper Hydration</h3>
+            <p>Water is essential for virtually every function in your body. Most people don't drink enough. Here's why hydration matters and how to improve yours.</p>
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> October 28, 2024</span>
+              <span><i class="far fa-user"></i> Dr. Wanjiku Njeri</span>
+            </div>
+            <div class="blog-full" id="article4" style="display: none;">
+              <hr style="margin: 1.5rem 0; border-color: var(--gray-200);">
+              <h4>Why Hydration Matters</h4>
+              <p>Your body is about 60% water. It regulates temperature, transports nutrients, removes waste, cushions organs, and lubricates joints. Even mild dehydration (1-2% loss) can impair cognitive function, energy levels, and mood.</p>
+              
+              <h4>Signs of Dehydration</h4>
+              <ul>
+                <li>Dark yellow urine</li>
+                <li>Dry mouth and lips</li>
+                <li>Fatigue and dizziness</li>
+                <li>Headaches</li>
+                <li>Decreased urine output</li>
+              </ul>
+              
+              <h4>Hydration Tips</h4>
+              <ul>
+                <li>Drink at least 8 glasses (2 liters) of water daily</li>
+                <li>Carry a reusable water bottle everywhere</li>
+                <li>Eat water-rich foods: watermelon, cucumbers, oranges</li>
+                <li>Drink a glass of water with every meal</li>
+                <li>Set hourly hydration reminders on your phone</li>
+                <li>In Kenya's hot climate, increase intake to 3+ liters during hot weather</li>
+              </ul>
+            </div>
+            <button class="btn btn-sm btn-outline blog-toggle" data-target="article4" style="margin-top: 1rem;">Read Full Article <i class="fas fa-chevron-down"></i></button>
+          </div>
+        </article>
+
+        <!-- Wellness Tip 2: Sleep -->
+        <article class="blog-card" data-category="wellness" data-animate data-delay="100">
+          <div class="blog-image" style="background: linear-gradient(135deg, #5C6BC0, #7E57C2); padding: 2rem; color: #fff; display: flex; align-items: center; justify-content: center; min-height: 200px;">
+            <i class="fas fa-moon" style="font-size: 4rem; opacity: 0.8;"></i>
+          </div>
+          <div class="blog-content">
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <span class="badge badge-info">Wellness</span>
+              <span class="badge badge-success">Quick Tip</span>
+            </div>
+            <h3>Sleep: Your Body's Superpower</h3>
+            <p>Quality sleep is as important as diet and exercise. Discover the science of sleep and practical tips for better rest.</p>
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> October 15, 2024</span>
+              <span><i class="far fa-user"></i> Dr. Amani Mwangi</span>
+            </div>
+            <div class="blog-full" id="article5" style="display: none;">
+              <hr style="margin: 1.5rem 0; border-color: var(--gray-200);">
+              <h4>Why Sleep Matters</h4>
+              <p>During sleep, your body repairs cells, consolidates memories, releases growth hormones, and strengthens immune function. Chronic sleep deprivation increases risk of obesity, diabetes, cardiovascular disease, and depression.</p>
+              
+              <h4>Sleep Hygiene Tips</h4>
+              <ul>
+                <li><strong>Consistent Schedule:</strong> Go to bed and wake up at the same time daily</li>
+                <li><strong>Dark Environment:</strong> Use blackout curtains or an eye mask</li>
+                <li><strong>Cool Room:</strong> Ideal sleeping temperature is 18-20°C</li>
+                <li><strong>Screen Curfew:</strong> Avoid screens 30-60 minutes before bed</li>
+                <li><strong>No Caffeine After 2 PM:</strong> Caffeine has a half-life of 5-6 hours</li>
+                <li><strong>Wind Down Routine:</strong> Read, meditate, or take a warm bath before sleep</li>
+              </ul>
+              
+              <h4>How Much Sleep Do You Need?</h4>
+              <p>Adults need 7-9 hours, teenagers 8-10 hours, school-age children 9-12 hours. If you consistently need an alarm to wake up, you're likely not getting enough sleep.</p>
+            </div>
+            <button class="btn btn-sm btn-outline blog-toggle" data-target="article5" style="margin-top: 1rem;">Read Full Article <i class="fas fa-chevron-down"></i></button>
+          </div>
+        </article>
+
+        <!-- Article 6: Mental Health -->
+        <article class="blog-card" data-category="wellness" data-animate data-delay="200">
+          <div class="blog-image" style="background: linear-gradient(135deg, #43A047, #66BB6A); padding: 2rem; color: #fff; display: flex; align-items: center; justify-content: center; min-height: 200px;">
+            <i class="fas fa-heart" style="font-size: 4rem; opacity: 0.8;"></i>
+          </div>
+          <div class="blog-content">
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+              <span class="badge badge-info">Wellness</span>
+              <span class="badge badge-primary">6 min read</span>
+            </div>
+            <h3>Breaking the Stigma: Mental Health in Kenya</h3>
+            <p>Mental health is just as important as physical health. It's time to have open conversations about anxiety, depression, and seeking help.</p>
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> September 30, 2024</span>
+              <span><i class="far fa-user"></i> Sarah Ochieng</span>
+            </div>
+            <div class="blog-full" id="article6" style="display: none;">
+              <hr style="margin: 1.5rem 0; border-color: var(--gray-200);">
+              <h4>The Reality of Mental Health in Kenya</h4>
+              <p>According to the WHO, about 1 in 4 Kenyans will experience a mental health condition at some point in their lives. Yet, mental health remains heavily stigmatized, and access to mental health services is limited, especially in rural areas.</p>
+              
+              <h4>Common Signs to Watch For</h4>
+              <ul>
+                <li>Persistent sadness or feeling "empty" for more than 2 weeks</li>
+                <li>Loss of interest in activities you once enjoyed</li>
+                <li>Changes in sleep or appetite</li>
+                <li>Difficulty concentrating or making decisions</li>
+                <li>Withdrawal from friends and family</li>
+                <li>Feelings of worthlessness or excessive guilt</li>
+              </ul>
+              
+              <h4>How to Get Help</h4>
+              <p>If you or someone you know is struggling, reach out. Talk to a trusted friend, family member, or healthcare provider. You can also contact the Kenya Red Cross helpline at <strong>1199</strong> for mental health support.</p>
+              
+              <p><strong>Remember: Seeking help is a sign of strength, not weakness.</strong></p>
+            </div>
+            <button class="btn btn-sm btn-outline blog-toggle" data-target="article6" style="margin-top: 1rem;">Read Full Article <i class="fas fa-chevron-down"></i></button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="section" style="background: var(--primary); color: #fff; text-align: center;">
+    <div class="container" data-animate>
+      <h2 style="color: #fff;">Stay Updated</h2>
+      <p style="color: rgba(255,255,255,0.8); max-width: 500px; margin: 0.5rem auto 1.5rem;">Get the latest health tips and emergency updates delivered to your inbox.</p>
+      <form class="newsletter-form" style="max-width: 450px; margin: 0 auto; display: flex; gap: 0.75rem;">
+        <input type="email" placeholder="Enter your email" style="flex: 1; padding: 0.75rem 1.25rem; border: 2px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); color: #fff; border-radius: var(--radius-full); font-size: var(--text-base); outline: none;" required>
+        <button type="submit" class="btn btn-teal"><i class="fas fa-paper-plane"></i> Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3><i class="fas fa-heartbeat"></i> SwiftTiba</h3>
+          <p>Africa's trusted emergency care platform.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
         </div>
-    </nav>
-
-    <!-- Blog & Health Tips Section -->
-    <section id="blog" class="blog-section py-5">
-        <div class="container">
-            <!-- Hero Banner for Blog & Health Tips -->
-            <div class="row align-items-center mb-5">
-                <div class="col-md-6 text-center text-md-start">
-                    <h1>Blog & <span>Health Tips</span></h1>
-                    <p class="lead">Stay Informed with the Latest Health News and Wellness Tips</p>
-                    <p>Explore our articles on health trends, wellness advice, and practical tips to keep you and your loved ones healthy and informed.</p>
-                </div>
-                <div class="col-md-6">
-                    <div class="blog-image glassmorphism">
-                        <img src="https://via.placeholder.com/500" alt="Health Tips Illustration" class="img-fluid rounded">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Blog Articles -->
-            <h2 class="text-center mb-5">Featured Articles</h2>
-            <div class="row">
-                <!-- Article 1 -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="blog-card glassmorphism">
-                        <img src="https://via.placeholder.com/300" alt="Blog Image" class="img-fluid rounded-top">
-                        <div class="p-4">
-                            <h4>5 Ways to Boost Your Immune System</h4>
-                            <p class="text-muted">March 15, 2025</p>
-                            <p>Discover simple habits to strengthen your immune system, including diet tips, exercise, and stress management techniques.</p>
-                            <a href="#comments-1" class="btn btn-outline-primary">Read More</a>
-                        </div>
-                        <!-- Comment Section -->
-                        <div class="comment-section p-4 border-top" id="comments-1">
-                            <h5>Comments</h5>
-                            <div class="comments-list mb-3">
-                                <p><strong>Jane D.</strong>: Great tips! I started adding more vitamin C to my diet.</p>
-                            </div>
-                            <form class="comment-form">
-                                <div class="mb-3">
-                                    <textarea class="form-control" rows="2" placeholder="Add a comment..." required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Post Comment</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- Article 2 -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="blog-card glassmorphism">
-                        <img src="https://via.placeholder.com/300" alt="Blog Image" class="img-fluid rounded-top">
-                        <div class="p-4">
-                            <h4>Understanding Stress: Causes and Solutions</h4>
-                            <p class="text-muted">March 10, 2025</p>
-                            <p>Learn about the common causes of stress and effective strategies to manage it for better mental health.</p>
-                            <a href="#comments-2" class="btn btn-outline-primary">Read More</a>
-                        </div>
-                        <!-- Comment Section -->
-                        <div class="comment-section p-4 border-top" id="comments-2">
-                            <h5>Comments</h5>
-                            <div class="comments-list mb-3">
-                                <p><strong>Mark S.</strong>: Meditation really helped me manage my stress levels!</p>
-                            </div>
-                            <form class="comment-form">
-                                <div class="mb-3">
-                                    <textarea class="form-control" rows="2" placeholder="Add a comment..." required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Post Comment</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- Article 3 -->
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="blog-card glassmorphism">
-                        <img src="https://via.placeholder.com/300" alt="Blog Image" class="img-fluid rounded-top">
-                        <div class="p-4">
-                            <h4>The Benefits of Regular Exercise</h4>
-                            <p class="text-muted">March 5, 2025</p>
-                            <p>Explore how regular physical activity can improve your physical and mental well-being.</p>
-                            <a href="#comments-3" class="btn btn-outline-primary">Read More</a>
-                        </div>
-                        <!-- Comment Section -->
-                        <div class="comment-section p-4 border-top" id="comments-3">
-                            <h5>Comments</h5>
-                            <div class="comments-list mb-3">
-                                <p><strong>Emily R.</strong>: I feel so much better after starting a daily workout routine!</p>
-                            </div>
-                            <form class="comment-form">
-                                <div class="mb-3">
-                                    <textarea class="form-control" rows="2" placeholder="Add a comment..." required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Post Comment</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Wellness Tips -->
-            <h2 class="text-center mb-5">Wellness Tips</h2>
-            <div class="row">
-                <!-- Tip 1 -->
-                <div class="col-md-6 mb-4">
-                    <div class="tip-card glassmorphism p-4">
-                        <h4>Stay Hydrated</h4>
-                        <p>Drink at least 8 glasses of water daily to keep your body hydrated and support overall health.</p>
-                    </div>
-                </div>
-                <!-- Tip 2 -->
-                <div class="col-md-6 mb-4">
-                    <div class="tip-card glassmorphism p-4">
-                        <h4>Get Enough Sleep</h4>
-                        <p>Aim for 7-9 hours of sleep per night to allow your body to recover and recharge.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Call to Action -->
-            <div class="text-center my-5">
-                <h3>Need Health Advice?</h3>
-                <p>Use our AI Chatbot for quick medical guidance or explore our First Aid Guides.</p>
-                <a href="chatbot.html" class="btn btn-primary me-2">Chat Now</a>
-                <a href="first-aid.html" class="btn btn-outline-primary">First Aid Guides</a>
-            </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="first-aid.html">First Aid</a></li>
+            <li><a href="hospital.html">Hospitals</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer py-5">
-        <div class="container">
-            <!-- Section 1: Tagline & Brief Description -->
-            <div class="row mb-4">
-                <div class="col-md-4 text-center text-md-start">
-                    <h3 class="footer-tagline">SwiftTiba – Your AI-Powered Healthcare Companion</h3>
-                    <p class="footer-description">Providing instant AI-driven health guidance, first aid tips, and nearby hospital recommendations.</p>
-                </div>
-                <!-- Section 2: Quick Links -->
-                <div class="col-md-4 text-center">
-                    <h5 class="footer-heading">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="footer-link">Home</a></li>
-                        <li><a href="about.html" class="footer-link">About Us</a></li>
-                        <li><a href="index.html#hospitals" class="footer-link">Nearby Hospitals</a></li>
-                        <li><a href="first-aid.html" class="footer-link">First Aid Guide</a></li>
-                        <li><a href="chatbot.html" class="footer-link">Health Chatbot</a></li>
-                        <li><a href="blog.html" class="footer-link">Blog & Health Tips</a></li>
-                    </ul>
-                </div>
-                <!-- Section 5: Social Media Links -->
-                <div class="col-md-4 text-center text-md-end">
-                    <h5 class="footer-heading">Follow Us</h5>
-                    <div class="social-icons">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- Section 7: Copyright & Legal Links -->
-            <div class="row pt-3 border-top">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="footer-copyright">© 2025 SwiftTiba. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <a href="#" class="footer-legal-link">Privacy Policy</a> | 
-                    <a href="#" class="footer-legal-link">Terms of Service</a>
-                </div>
-            </div>
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
         </div>
-        <!-- Scroll-to-Top Button -->
-        <button id="scrollToTopBtn" class="scroll-to-top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-    </footer>
+        <div>
+          <h4>Emergency</h4>
+          <ul class="footer-links">
+            <li><a href="tel:999"><i class="fas fa-phone-alt"></i> Call 999</a></li>
+            <li><a href="tel:112"><i class="fas fa-phone-alt"></i> Call 112</a></li>
+            <li><a href="mailto:support@swifttiba.com"><i class="fas fa-envelope"></i> Email Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SwiftTiba. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="cookie-policy.html">Cookies</a>
+          <a href="disclaimer.html">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="scripts.js"></script>
-    <!-- Blog-specific JS -->
-    <script src="js/blog.js"></script>
+  <button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <div class="cookie-banner" role="dialog">
+    <div class="container">
+      <p><i class="fas fa-cookie-bite"></i> We use essential cookies to ensure SwiftTiba works properly. <a href="cookie-policy.html">Learn more</a></p>
+      <div class="cookie-actions">
+        <button class="btn btn-sm btn-primary cookie-accept">Accept All</button>
+        <button class="btn btn-sm btn-ghost cookie-decline" style="color:rgba(255,255,255,0.7);">Essential Only</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/blog.js"></script>
 </body>
 </html>

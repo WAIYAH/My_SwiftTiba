@@ -1,180 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - SwiftTiba</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/contact.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — SwiftTiba</title>
+  <meta name="description" content="Get in touch with SwiftTiba. Contact our team for questions, partnerships, or feedback.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚑</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Emergency Hotline -->
-    <div class="emergency-hotline text-center py-2">
-        <span>Emergency Hotline: <a href="tel:+254734567890">+25473-456-7890</a></span>
+
+  <div class="emergency-bar">
+    <span class="pulse-dot"></span>
+    Emergency? Call <a href="tel:999" data-emergency-call>999</a> or <a href="tel:112" data-emergency-call>112</a> immediately
+  </div>
+
+  <nav class="navbar" role="navigation">
+    <div class="container">
+      <a href="index.html" class="nav-brand"><i class="fas fa-heartbeat"></i> SwiftTiba</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="first-aid.html">First Aid</a></li>
+        <li><a href="hospital.html">Hospitals</a></li>
+        <li><a href="chatbot.html">AI Chat</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tel:999" class="nav-emergency-btn" data-emergency-call><i class="fas fa-phone-alt"></i> Call 999</a>
+        <button class="dark-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
     </div>
+  </nav>
 
-    <!-- Sticky Navigation Bar -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">SwiftTiba</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+  <div class="mobile-menu" role="dialog">
+    <button class="mobile-close" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="first-aid.html">First Aid</a>
+    <a href="hospital.html">Hospitals</a>
+    <a href="chatbot.html">AI Chat</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:999" class="mobile-emergency" data-emergency-call><i class="fas fa-phone-alt"></i> Call 999 Now</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" style="padding: 3rem 0 4rem;">
+    <div class="container">
+      <span class="badge badge-primary" style="margin-bottom: 1rem; background: rgba(255,255,255,0.15); color: #fff;"><i class="fas fa-envelope"></i> Reach Out</span>
+      <h1>Contact Us</h1>
+      <p>Have questions, feedback, or partnership inquiries? We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- Emergency Notice -->
+  <section class="section" style="padding-top: 2rem; padding-bottom: 0;">
+    <div class="container">
+      <div class="disclaimer-bar" data-animate style="background: var(--emergency-red-bg); border-color: var(--emergency-red);">
+        <i class="fas fa-exclamation-triangle" style="color: var(--emergency-red);"></i>
+        <div>
+          <strong style="color: var(--emergency-red);">For medical emergencies, do not use this form.</strong>
+          Call <a href="tel:999" style="color: var(--emergency-red); font-weight: 700;">999</a> or <a href="tel:112" style="color: var(--emergency-red); font-weight: 700;">112</a> immediately, or visit the <a href="hospital.html" style="color: var(--primary); font-weight: 600;">Hospital Locator</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2" style="gap: 3rem;">
+        <!-- Contact Form -->
+        <div data-animate>
+          <h2 style="margin-bottom: 0.5rem;">Send Us a Message</h2>
+          <p style="color: var(--gray-600); margin-bottom: 2rem;">Fill out the form below and we'll get back to you within 24 hours.</p>
+
+          <form id="contactForm" class="form" novalidate>
+            <div class="form-group">
+              <label for="contactName">Full Name <span style="color: var(--emergency-red);">*</span></label>
+              <input type="text" id="contactName" name="name" placeholder="Enter your full name" required>
+              <span class="form-error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email Address <span style="color: var(--emergency-red);">*</span></label>
+              <input type="email" id="contactEmail" name="email" placeholder="your.email@example.com" required>
+              <span class="form-error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Subject <span style="color: var(--emergency-red);">*</span></label>
+              <select id="contactSubject" name="subject" required>
+                <option value="" disabled selected>Choose a subject</option>
+                <option value="general">General Inquiry</option>
+                <option value="feedback">Feedback & Suggestions</option>
+                <option value="partnership">Partnership Opportunities</option>
+                <option value="technical">Technical Support</option>
+                <option value="media">Media & Press</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="form-error" id="subjectError"></span>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message <span style="color: var(--emergency-red);">*</span></label>
+              <textarea id="contactMessage" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+              <span class="form-error" id="messageError"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <i class="fas fa-paper-plane"></i> Send Message
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="hospital.html">Nearby Hospitals</a></li>
-                    <li class="nav-item"><a class="nav-link" href="first-aid.html">First Aid Guide</a></li>
-                    <li class="nav-item"><a class="nav-link" href="chatbot.html">Health Chatbot</a></li>
-                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog & Tips</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                </ul>
-                <!-- Dark Mode Toggle -->
-                <div class="dark-mode-toggle ms-3">
-                    <i class="fas fa-moon"></i>
-                </div>
-            </div>
+          </form>
+          <div id="formSuccess" class="form-success" style="display: none;">
+            <i class="fas fa-check-circle" style="font-size: 2rem; color: var(--success);"></i>
+            <h3 style="margin-top: 1rem;">Message Sent!</h3>
+            <p>Thank you for reaching out. We'll respond within 24 hours.</p>
+          </div>
         </div>
-    </nav>
 
-    <!-- Contact Us Section -->
-    <section id="contact" class="contact-section py-5">
-        <div class="container">
-            <!-- Hero Banner for Contact Us -->
-            <div class="row align-items-center mb-5">
-                <div class="col-md-6 text-center text-md-start">
-                    <h1>Contact <span>Us</span></h1>
-                    <p class="lead">Get in Touch with SwiftTiba</p>
-                    <p>We’re here to assist you with any questions or support needs. Reach out to us via the form below, WhatsApp, or visit our location.</p>
-                </div>
-                <div class="col-md-6">
-                    <div class="contact-image glassmorphism">
-                        <img src="https://via.placeholder.com/500" alt="Contact Us Illustration" class="img-fluid rounded">
-                    </div>
-                </div>
-            </div>
+        <!-- Contact Info -->
+        <div data-animate data-delay="150">
+          <h2 style="margin-bottom: 0.5rem;">Get In Touch</h2>
+          <p style="color: var(--gray-600); margin-bottom: 2rem;">Reach us through any of these channels.</p>
 
-            <!-- Contact Form and Details -->
-            <div class="row">
-                <!-- Contact Form -->
-                <div class="col-md-6 mb-4">
-                    <div class="contact-form glassmorphism p-4">
-                        <h4>Get in Touch</h4>
-                        <form id="contactForm">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="subject" class="form-label">Subject</label>
-                                <input type="text" class="form-control" id="subject" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="4" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-                <!-- Contact Details -->
-                <div class="col-md-6 mb-4">
-                    <div class="contact-details glassmorphism p-4">
-                        <h4>Contact Information</h4>
-                        <p><i class="fas fa-phone me-2"></i> Phone: <a href="tel:+1234567890">+123-456-7890</a></p>
-                        <p><i class="fas fa-envelope me-2"></i> Email: <a href="mailto:support@swifttiba.com">support@swifttiba.com</a></p>
-                        <a href="https://wa.me/254715674828" class="btn btn-success mt-3"><i class="fab fa-whatsapp me-2"></i> Chat on WhatsApp</a>
-                    </div>
-                </div>
+          <div class="card" style="margin-bottom: 1.5rem;">
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div class="card-icon icon-purple" style="min-width: 48px;"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h4 style="margin-bottom: 0.25rem;">Email</h4>
+                <a href="mailto:support@swifttiba.com" style="color: var(--primary); font-weight: 500;">support@swifttiba.com</a>
+                <p style="font-size: var(--text-sm); color: var(--gray-500); margin-top: 0.25rem;">We typically reply within 24 hours</p>
+              </div>
             </div>
+          </div>
 
-            <!-- Google Maps Location -->
-            <div class="row">
-                <div class="col-12">
-                    <h4 class="text-center mb-4">Our Location</h4>
-                    <div id="map" class="map-container glassmorphism" style="height: 400px; border-radius: 15px;"></div>
-                </div>
+          <div class="card" style="margin-bottom: 1.5rem;">
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div class="card-icon icon-teal" style="min-width: 48px;"><i class="fab fa-whatsapp"></i></div>
+              <div>
+                <h4 style="margin-bottom: 0.25rem;">WhatsApp</h4>
+                <a href="https://wa.me/254715674828" target="_blank" rel="noopener" style="color: var(--teal); font-weight: 500;">+254 715 674 828</a>
+                <p style="font-size: var(--text-sm); color: var(--gray-500); margin-top: 0.25rem;">Quick responses during business hours</p>
+              </div>
             </div>
+          </div>
 
-            <!-- Call to Action -->
-            <div class="text-center my-5">
-                <h3>Stay Connected</h3>
-                <p>Follow us on social media for the latest updates or explore our services for more assistance.</p>
-                <a href="blog.html" class="btn btn-primary me-2">Blog & Tips</a>
-                <a href="index.html#services" class="btn btn-outline-primary">Explore Services</a>
+          <div class="card" style="margin-bottom: 1.5rem;">
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div class="card-icon icon-red" style="min-width: 48px;"><i class="fas fa-phone-alt"></i></div>
+              <div>
+                <h4 style="margin-bottom: 0.25rem;">Emergency Lines</h4>
+                <div style="display: flex; gap: 1rem;">
+                  <a href="tel:999" style="color: var(--emergency-red); font-weight: 700;">999</a>
+                  <a href="tel:112" style="color: var(--emergency-red); font-weight: 700;">112</a>
+                </div>
+                <p style="font-size: var(--text-sm); color: var(--gray-500); margin-top: 0.25rem;">For life-threatening emergencies only</p>
+              </div>
             </div>
+          </div>
+
+          <div class="card" style="margin-bottom: 1.5rem;">
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div class="card-icon icon-purple" style="min-width: 48px;"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h4 style="margin-bottom: 0.25rem;">Location</h4>
+                <p style="color: var(--charcoal);">Nairobi, Kenya</p>
+                <p style="font-size: var(--text-sm); color: var(--gray-500); margin-top: 0.25rem;">Serving communities across East Africa</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="card" style="text-align: center;">
+            <h4 style="margin-bottom: 1rem;">Follow Us</h4>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+              <a href="#" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-full); background: var(--primary-100); color: var(--primary); transition: all 0.3s;"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-full); background: var(--primary-100); color: var(--primary); transition: all 0.3s;"><i class="fab fa-twitter"></i></a>
+              <a href="#" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-full); background: var(--primary-100); color: var(--primary); transition: all 0.3s;"><i class="fab fa-instagram"></i></a>
+              <a href="#" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-full); background: var(--primary-100); color: var(--primary); transition: all 0.3s;"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer py-5">
-        <div class="container">
-            <!-- Section 1: Tagline & Brief Description -->
-            <div class="row mb-4">
-                <div class="col-md-4 text-center text-md-start">
-                    <h3 class="footer-tagline">SwiftTiba – Your AI-Powered Healthcare Companion</h3>
-                    <p class="footer-description">Providing instant AI-driven health guidance, first aid tips, and nearby hospital recommendations.</p>
-                </div>
-                <!-- Section 2: Quick Links -->
-                <div class="col-md-4 text-center">
-                    <h5 class="footer-heading">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="footer-link">Home</a></li>
-                        <li><a href="about.html" class="footer-link">About Us</a></li>
-                        <li><a href="hospital.html" class="footer-link">Nearby Hospitals</a></li>
-                        <li><a href="first-aid.html" class="footer-link">First Aid Guide</a></li>
-                        <li><a href="chatbot.html" class="footer-link">Health Chatbot</a></li>
-                        <li><a href="blog.html" class="footer-link">Blog & Health Tips</a></li>
-                    </ul>
-                </div>
-                <!-- Section 5: Social Media Links -->
-                <div class="col-md-4 text-center text-md-end">
-                    <h5 class="footer-heading">Follow Us</h5>
-                    <div class="social-icons">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- Section 7: Copyright & Legal Links -->
-            <div class="row pt-3 border-top">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="footer-copyright">© 2025 SwiftTiba. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <a href="#" class="footer-legal-link">Privacy Policy</a> | 
-                    <a href="#" class="footer-legal-link">Terms of Service</a>
-                </div>
-            </div>
+  <!-- FAQ -->
+  <section class="section" style="background: var(--gray-50);">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="accordion-list" style="max-width: 700px; margin: 0 auto;">
+        <div class="accordion-item" data-animate>
+          <button class="accordion-trigger">How quickly do you respond to messages? <i class="fas fa-chevron-down"></i></button>
+          <div class="accordion-content"><div class="accordion-content-inner"><p>We aim to respond to all inquiries within 24 hours during business days. For urgent matters, please use WhatsApp for faster responses.</p></div></div>
         </div>
-        <!-- Scroll-to-Top Button -->
-        <button id="scrollToTopBtn" class="scroll-to-top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-    </footer>
+        <div class="accordion-item" data-animate>
+          <button class="accordion-trigger">Can I partner with SwiftTiba? <i class="fas fa-chevron-down"></i></button>
+          <div class="accordion-content"><div class="accordion-content-inner"><p>Absolutely! We welcome partnerships with healthcare organizations, NGOs, government agencies, and technology companies. Select "Partnership Opportunities" in the form above or email us directly.</p></div></div>
+        </div>
+        <div class="accordion-item" data-animate>
+          <button class="accordion-trigger">Is SwiftTiba free to use? <i class="fas fa-chevron-down"></i></button>
+          <div class="accordion-content"><div class="accordion-content-inner"><p>Yes! SwiftTiba is completely free for all users. Our mission is to make healthcare information accessible to everyone, regardless of financial status.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-    <!-- Custom JS -->
-    <script src="scripts.js"></script>
-    <script src="js/contact.js"></script>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3><i class="fas fa-heartbeat"></i> SwiftTiba</h3>
+          <p>Africa's trusted emergency care platform.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="first-aid.html">First Aid</a></li>
+            <li><a href="hospital.html">Hospitals</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Emergency</h4>
+          <ul class="footer-links">
+            <li><a href="tel:999"><i class="fas fa-phone-alt"></i> Call 999</a></li>
+            <li><a href="tel:112"><i class="fas fa-phone-alt"></i> Call 112</a></li>
+            <li><a href="mailto:support@swifttiba.com"><i class="fas fa-envelope"></i> Email Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SwiftTiba. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="cookie-policy.html">Cookies</a>
+          <a href="disclaimer.html">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
+  <button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <div class="cookie-banner" role="dialog">
+    <div class="container">
+      <p><i class="fas fa-cookie-bite"></i> We use essential cookies to ensure SwiftTiba works properly. <a href="cookie-policy.html">Learn more</a></p>
+      <div class="cookie-actions">
+        <button class="btn btn-sm btn-primary cookie-accept">Accept All</button>
+        <button class="btn btn-sm btn-ghost cookie-decline" style="color:rgba(255,255,255,0.7);">Essential Only</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
 </body>
 </html>

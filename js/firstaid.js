@@ -1,23 +1,27 @@
-// Dark Mode Toggle
-const darkModeToggle = document.querySelector('.dark-mode-toggle');
-darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-});
+/**
+ * SwiftTiba — First Aid Page Logic
+ * Filter tabs for first aid categories
+ */
+'use strict';
 
-// Scroll-to-Top Button Functionality
-const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+document.querySelectorAll('.filter-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    // Update active tab
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollToTopBtn.classList.add('visible');
-    } else {
-        scrollToTopBtn.classList.remove('visible');
-    }
-});
+    const filter = tab.getAttribute('data-filter');
+    const cards = document.querySelectorAll('.firstaid-card');
 
-scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    cards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      if (filter === 'all' || category === filter) {
+        card.style.display = '';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      } else {
+        card.style.display = 'none';
+      }
     });
+  });
 });
