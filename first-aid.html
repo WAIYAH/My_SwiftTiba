@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-page="first-aid">
 
   <!-- Emergency Bar -->
   <div class="emergency-bar">
@@ -54,11 +54,36 @@
   </div>
 
   <!-- Hero -->
-  <section class="hero" style="padding: 3rem 0 4rem;">
+  <section class="hero page-hero">
+    <div class="hero-bg-shapes">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+    </div>
     <div class="container">
-      <span class="badge badge-critical" style="margin-bottom: 1rem;"><i class="fas fa-circle" style="font-size: 6px;"></i> Life-Saving Information</span>
-      <h1>First Aid Guide</h1>
-      <p>Step-by-step emergency instructions that could save a life. Follow these guides carefully and always call emergency services for serious situations.</p>
+      <div class="page-hero-grid">
+        <div class="hero-content">
+          <span class="badge badge-critical hero-badge"><i class="fas fa-circle" style="font-size: 6px;"></i> Life-Saving Information</span>
+          <h1>First Aid <span class="hero-highlight">Guide</span></h1>
+          <p>Step-by-step emergency instructions that could save a life. Follow these guides carefully and always call emergency services for serious situations.</p>
+          <div class="hero-actions">
+            <a href="tel:999" class="btn btn-emergency" data-emergency-call><i class="fas fa-phone-alt"></i> Call 999</a>
+            <a href="#guides" class="btn btn-outline-white"><i class="fas fa-book-open"></i> View Guides</a>
+          </div>
+        </div>
+        <div class="page-hero-image-wrapper">
+          <div class="page-hero-image-container">
+            <img src="img/tutorial.jpeg" alt="First aid training demonstration" class="page-hero-image" loading="eager">
+            <div class="hero-float-badge hero-float-badge-1">
+              <i class="fas fa-heart"></i>
+              <span>Save Lives</span>
+            </div>
+            <div class="hero-float-badge hero-float-badge-2">
+              <i class="fas fa-check-circle"></i>
+              <span>5+ Guides</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

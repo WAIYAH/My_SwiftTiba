@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-page="chatbot">
 
   <div class="emergency-bar">
     <span class="pulse-dot"></span>
@@ -51,11 +51,36 @@
   </div>
 
   <!-- Hero -->
-  <section class="hero" style="padding: 3rem 0 4rem;">
+  <section class="hero page-hero">
+    <div class="hero-bg-shapes">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+    </div>
     <div class="container">
-      <span class="badge badge-primary" style="margin-bottom: 1rem; background: rgba(255,255,255,0.15); color: #fff;"><i class="fas fa-circle" style="font-size: 6px;"></i> AI-Powered Health Guidance</span>
-      <h1>Health Chatbot</h1>
-      <p>Get instant health guidance and symptom assessment. Our AI assistant can help you understand symptoms and recommend next steps.</p>
+      <div class="page-hero-grid">
+        <div class="hero-content">
+          <span class="badge badge-primary hero-badge" style="background: rgba(255,255,255,0.15); color: #fff;"><i class="fas fa-circle" style="font-size: 6px;"></i> AI-Powered Health Guidance</span>
+          <h1>Health <span class="hero-highlight">Chatbot</span></h1>
+          <p>Get instant health guidance and symptom assessment. Our AI assistant can help you understand symptoms and recommend next steps.</p>
+          <div class="hero-actions">
+            <a href="#chat" class="btn btn-primary btn-lg" style="background: #fff; color: var(--primary);"><i class="fas fa-comment-medical"></i> Start Chatting</a>
+            <a href="first-aid.html" class="btn btn-outline-white"><i class="fas fa-first-aid"></i> First Aid</a>
+          </div>
+        </div>
+        <div class="page-hero-image-wrapper">
+          <div class="page-hero-image-container">
+            <img src="img/service.jpeg" alt="AI health service illustration" class="page-hero-image" loading="eager">
+            <div class="hero-float-badge hero-float-badge-1">
+              <i class="fas fa-robot"></i>
+              <span>AI Powered</span>
+            </div>
+            <div class="hero-float-badge hero-float-badge-2">
+              <i class="fas fa-clock"></i>
+              <span>Instant Reply</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

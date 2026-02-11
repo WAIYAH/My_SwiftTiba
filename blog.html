@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-page="blog">
 
   <div class="emergency-bar">
     <span class="pulse-dot"></span>
@@ -51,11 +51,35 @@
   </div>
 
   <!-- Hero -->
-  <section class="hero" style="padding: 3rem 0 4rem;">
+  <section class="hero page-hero">
+    <div class="hero-bg-shapes">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+    </div>
     <div class="container">
-      <span class="badge badge-primary" style="margin-bottom: 1rem; background: rgba(255,255,255,0.15); color: #fff;"><i class="fas fa-newspaper"></i> Health Insights</span>
-      <h1>Health Blog</h1>
-      <p>Expert health tips, wellness advice, and medical insights to help you live your healthiest life.</p>
+      <div class="page-hero-grid">
+        <div class="hero-content">
+          <span class="badge badge-primary hero-badge" style="background: rgba(255,255,255,0.15); color: #fff;"><i class="fas fa-newspaper"></i> Health Insights</span>
+          <h1>Health <span class="hero-highlight">Blog</span></h1>
+          <p>Expert health tips, wellness advice, and medical insights to help you live your healthiest life.</p>
+          <div class="hero-actions">
+            <a href="#articles" class="btn btn-outline-white"><i class="fas fa-book-reader"></i> Read Articles</a>
+          </div>
+        </div>
+        <div class="page-hero-image-wrapper">
+          <div class="page-hero-image-container">
+            <img src="img/nurse.jpg" alt="Healthcare professional sharing health tips" class="page-hero-image" loading="eager">
+            <div class="hero-float-badge hero-float-badge-1">
+              <i class="fas fa-pen-fancy"></i>
+              <span>Expert Tips</span>
+            </div>
+            <div class="hero-float-badge hero-float-badge-2">
+              <i class="fas fa-heartbeat"></i>
+              <span>Wellness</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

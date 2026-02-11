@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-page="about">
 
   <div class="emergency-bar">
     <span class="pulse-dot"></span>
@@ -51,11 +51,36 @@
   </div>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero page-hero">
+    <div class="hero-bg-shapes">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+    </div>
     <div class="container">
-      <span class="badge badge-primary" style="margin-bottom: 1rem; background: rgba(255,255,255,0.15); color: #fff;"><i class="fas fa-heart"></i> Our Story</span>
-      <h1>About SwiftTiba</h1>
-      <p>Empowering communities with accessible, technology-driven healthcare solutions that save lives across Africa.</p>
+      <div class="page-hero-grid">
+        <div class="hero-content">
+          <span class="badge badge-primary hero-badge" style="background: rgba(255,255,255,0.15); color: #fff;"><i class="fas fa-heart"></i> Our Story</span>
+          <h1>About <span class="hero-highlight">SwiftTiba</span></h1>
+          <p>Empowering communities with accessible, technology-driven healthcare solutions that save lives across Africa.</p>
+          <div class="hero-actions">
+            <a href="#mission" class="btn btn-outline-white"><i class="fas fa-bullseye"></i> Our Mission</a>
+            <a href="contact.html" class="btn btn-outline-white"><i class="fas fa-handshake"></i> Partner With Us</a>
+          </div>
+        </div>
+        <div class="page-hero-image-wrapper">
+          <div class="page-hero-image-container">
+            <img src="img/doctor.jpg" alt="SwiftTiba team dedicated to saving lives" class="page-hero-image" loading="eager">
+            <div class="hero-float-badge hero-float-badge-1">
+              <i class="fas fa-globe-africa"></i>
+              <span>Pan-African</span>
+            </div>
+            <div class="hero-float-badge hero-float-badge-2">
+              <i class="fas fa-users"></i>
+              <span>Since 2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

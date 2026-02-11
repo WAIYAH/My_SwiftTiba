@@ -944,10 +944,149 @@ body.dark .hero-float-badge {
 
 /* Mobile hero image (show as background) */
 @media (max-width: 991px) {
-  .hero {
+  .hero:not(.page-hero) {
     background:
       linear-gradient(135deg, rgba(106, 27, 154, 0.92) 0%, rgba(74, 20, 140, 0.95) 100%),
       url('../img/doctor.jpg') center/cover no-repeat;
+  }
+}
+
+/* ============================================
+   PAGE HERO (Sub-pages: compact split layout)
+   ============================================ */
+.page-hero {
+  padding: 3rem 0 4rem;
+  min-height: auto;
+}
+
+@media (min-width: 768px) {
+  .page-hero { padding: 4rem 0 5rem; }
+}
+
+.page-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .page-hero-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-10);
+  }
+}
+
+.page-hero .hero-content h1 {
+  font-size: var(--text-3xl);
+}
+
+@media (min-width: 768px) {
+  .page-hero .hero-content h1 { font-size: var(--text-4xl); }
+}
+
+@media (min-width: 1200px) {
+  .page-hero .hero-content h1 { font-size: var(--text-5xl); }
+}
+
+/* Page hero image */
+.page-hero-image-wrapper {
+  display: none;
+  position: relative;
+  animation: heroImageSlideIn 1s ease-out 0.3s both;
+}
+
+@media (min-width: 768px) {
+  .page-hero-image-wrapper { display: block; }
+}
+
+.page-hero-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.page-hero-image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  animation: heroImageFloat 6s ease-in-out infinite 1.5s;
+}
+
+@media (min-width: 992px) {
+  .page-hero-image { height: 420px; }
+  .page-hero-image-container { max-width: 440px; }
+}
+
+/* Decorative ring for page heroes */
+.page-hero-image-container::before {
+  content: '';
+  position: absolute;
+  top: -10px; left: -10px;
+  right: -10px; bottom: -10px;
+  border: 2px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  animation: heroRingSpin 30s linear infinite;
+}
+
+/* Gradient overlay for page hero images */
+.page-hero-image-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 35%;
+  background: linear-gradient(to top, rgba(106, 27, 154, 0.35), transparent);
+  border-radius: 0 0 20px 20px;
+  pointer-events: none;
+}
+
+/* Mobile: show image as background overlay */
+@media (max-width: 767px) {
+  .page-hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 767px) {
+  [data-page="first-aid"] .page-hero {
+    background:
+      linear-gradient(135deg, rgba(106, 27, 154, 0.92), rgba(74, 20, 140, 0.95)),
+      url('../img/tutorial.jpeg') center/cover no-repeat;
+  }
+  [data-page="hospital"] .page-hero {
+    background:
+      linear-gradient(135deg, rgba(106, 27, 154, 0.92), rgba(74, 20, 140, 0.95)),
+      url('../img/hospitals.jpeg') center/cover no-repeat;
+  }
+  [data-page="chatbot"] .page-hero {
+    background:
+      linear-gradient(135deg, rgba(106, 27, 154, 0.92), rgba(74, 20, 140, 0.95)),
+      url('../img/service.jpeg') center/cover no-repeat;
+  }
+  [data-page="blog"] .page-hero {
+    background:
+      linear-gradient(135deg, rgba(106, 27, 154, 0.92), rgba(74, 20, 140, 0.95)),
+      url('../img/nurse.jpg') center/cover no-repeat;
+  }
+  [data-page="about"] .page-hero {
+    background:
+      linear-gradient(135deg, rgba(106, 27, 154, 0.92), rgba(74, 20, 140, 0.95)),
+      url('../img/doctor.jpg') center/cover no-repeat;
+  }
+  [data-page="contact"] .page-hero {
+    background:
+      linear-gradient(135deg, rgba(106, 27, 154, 0.92), rgba(74, 20, 140, 0.95)),
+      url('../img/service.jpeg') center/cover no-repeat;
   }
 }
 
