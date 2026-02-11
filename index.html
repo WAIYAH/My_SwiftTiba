@@ -74,13 +74,21 @@
 
   <!-- Hero Section -->
   <section class="hero">
+    <!-- Animated background shapes -->
+    <div class="hero-bg-shapes">
+      <div class="hero-shape hero-shape-1"></div>
+      <div class="hero-shape hero-shape-2"></div>
+      <div class="hero-shape hero-shape-3"></div>
+    </div>
+
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center;">
-        <div>
-          <span class="badge badge-critical" style="margin-bottom: 1rem;">
+      <div class="hero-grid">
+        <!-- Text Content -->
+        <div class="hero-content">
+          <span class="badge badge-critical hero-badge">
             <i class="fas fa-circle" style="font-size: 6px;"></i> Emergency Ready 24/7
           </span>
-          <h1>Your Lifeline in<br>Every Emergency</h1>
+          <h1>Your Lifeline in<br>Every <span class="hero-highlight">Emergency</span></h1>
           <p>SwiftTiba empowers you with instant access to first aid guidance, nearby hospitals, and AI-powered health support. Because in emergencies, every second counts.</p>
           <div class="hero-actions">
             <a href="tel:999" class="btn btn-emergency btn-lg" data-emergency-call>
@@ -106,6 +114,26 @@
             <div class="hero-stat">
               <span class="stat-number">5+</span>
               <span class="stat-label">First Aid Guides</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="hero-image-wrapper">
+          <div class="hero-image-container">
+            <img src="img/doctor.jpg" alt="Professional doctor ready to provide emergency care" class="hero-image" loading="eager">
+            <!-- Floating badges -->
+            <div class="hero-float-badge hero-float-badge-1">
+              <i class="fas fa-shield-alt"></i>
+              <span>Trusted Care</span>
+            </div>
+            <div class="hero-float-badge hero-float-badge-2">
+              <i class="fas fa-clock"></i>
+              <span>24/7 Support</span>
+            </div>
+            <div class="hero-float-badge hero-float-badge-3">
+              <i class="fas fa-heart"></i>
+              <span>10K+ Helped</span>
             </div>
           </div>
         </div>
