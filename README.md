@@ -27,6 +27,7 @@
 ### Prerequisites  
 - Web browser (Chrome, Edge, Firefox)  
 - Git installed (if cloning locally)  
+- **VS Code 1.109.2+** (recommended for development with GitHub Copilot support)  
 
 ### Installation  
 1. Clone the repo:  
