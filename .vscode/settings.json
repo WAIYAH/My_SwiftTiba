@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "html.format.wrapLineLength": 120,
+  "html.format.indentInnerHtml": true,
+  "css.validate": true,
+  "javascript.validate.enable": true,
+  "liveServer.settings.donotShowInfoMsg": true
+}
